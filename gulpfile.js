@@ -11,10 +11,11 @@ const gulp = require('gulp'),
     minify = require('gulp-minify'),
     concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps'),
-    changed = require('gulp-changed'),
+    // changed = require('gulp-changed'),
     lazypipe = require('lazypipe'),
     rev = require('gulp-rev');
-wiredep = require('wiredep').stream;
+    wiredep = require('wiredep').stream;
+
 const enabled = {
     // Enable static asset revisioning when `--production`
     rev: argv.production,
