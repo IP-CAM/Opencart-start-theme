@@ -153,7 +153,7 @@ gulp.task('scripts', ['jshint'], function () {
 
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
-gulp.task('clean', require('del').bind(null, [settings.path.dist() + 'stylesheet', settings.path.dist() + 'scripts']));
+gulp.task('clean', require('del').bind(null, [settings.path.dist() + 'stylesheet', settings.path.dist() + 'scripts','assets.json']));
 
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.

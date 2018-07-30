@@ -154,12 +154,13 @@ class ControllerCommonHeader extends Controller {
 		$manifest_path = './assets.json';
 		if (file_exists($manifest_path)) {
 			$manifest = json_decode(file_get_contents($manifest_path), true);
-			array_push($data['scripts'],$manifest['main.js']);
-			array_push($data['styles'], [
-				'href' => $manifest['main.css'],
-				'rel' => 'stylesheet',
-				'media' => 'screen'
-			]);
+			$data['manifest'] = $manifest;
+//			array_push($data['scripts'],$manifest['main.js']);
+//			array_push($data['styles'], [
+//				'href' => $manifest['main.css'],
+//				'rel' => 'stylesheet',
+//				'media' => 'screen'
+//			]);
 		}
 		// /assets.json
 		return $this->load->view('common/header', $data);
