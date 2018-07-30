@@ -1,3 +1,12 @@
+
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+@import "../../libs/bootstrap/scss/bootstrap-grid.scss";
+@import "../../libs/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../libs/bootstrap/scss/_carousel.scss";
+@import "../../libs/bootstrap/scss/_modal.scss";
+// endbower
+
 body {
-    background-color: lightskyblue;
+    background-color: inherit;
 }

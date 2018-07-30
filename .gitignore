@@ -1,5 +1,7 @@
 catalog/view/theme/rc-opencart/scripts
 catalog/view/theme/rc-opencart/stylesheet
+catalog/view/theme/rc-opencart/libs
 node_modules
 .idea
-.idea/workspace.xml
+package-lock.json
+assets.json

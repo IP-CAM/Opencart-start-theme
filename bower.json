@@ -1,0 +1,23 @@
+{
+  "name": "WP-oc",
+  "homepage": "https://github.com/redclick-eu/RC-oc",
+  "authors": [
+    "Red Click <mail@redclick.su>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.0"
+  },
+    "overrides": {
+    "bootstrap": {
+      "main": [
+        "./scss/bootstrap-grid.scss",
+        "./scss/bootstrap-reboot.scss",
+        "./scss/_carousel.scss",
+        "./scss/_modal.scss",
+        "./dist/js/bootstrap.bundle.js"
+      ]
+    }
+  }
+}
