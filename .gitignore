@@ -1,7 +1,12 @@
 catalog/view/theme/rc-opencart/scripts
 catalog/view/theme/rc-opencart/stylesheet
 catalog/view/theme/rc-opencart/libs
+system
+image
 node_modules
 .idea
 package-lock.json
 assets.json
+index.php
+config.pgp
+.htaccess
