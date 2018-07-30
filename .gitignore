@@ -8,5 +8,6 @@ node_modules
 package-lock.json
 assets.json
 index.php
-config.pgp
+config.php
 .htaccess
+robots.txt
