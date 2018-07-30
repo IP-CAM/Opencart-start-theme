@@ -1,0 +1,5 @@
+catalog/view/theme/rc-opencart/scripts
+catalog/view/theme/rc-opencart/stylesheet
+node_modules
+.idea
+.idea/workspace.xml
