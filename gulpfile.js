@@ -112,7 +112,7 @@ gulp.task('styles', ['wiredep'], function () {
 
 // ### Watch
 // `gulp watch` - Use BrowserSync to proxy your dev server and synchronize code
-gulp.task('watch', function () {
+gulp.task('watch',['default'], function () {
     browserSync.init({
         proxy: settings.local_url
     });
