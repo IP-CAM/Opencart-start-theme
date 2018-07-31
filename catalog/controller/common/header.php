@@ -156,20 +156,18 @@ class ControllerCommonHeader extends Controller {
 		$manifest_path = './assets.json';
 		if (file_exists($manifest_path)) {
 			$manifest = json_decode(file_get_contents($manifest_path), true);
-			array_push($data['scripts'],'catalog/view/theme/'.$this->config->get('theme_default_directory').'/dist/scripts/'.$manifest['main.js']);
-			array_push($data['styles'], [
-				'href' => 'catalog/view/theme/'.$this->config->get('theme_default_directory').'/dist/stylesheet/'.$manifest['main.css'],
-				'rel' => 'stylesheet',
-				'media' => 'screen'
-			]);
+			$js = $manifest['main.js'];
+			$css = $manifest['main.css'];
 		} else {
-			array_push($data['scripts'],'catalog/view/theme/'.$this->config->get('theme_default_directory').'/dist/scripts/main.js');
-			array_push($data['styles'], [
-				'href' => 'catalog/view/theme/'.$this->config->get('theme_default_directory').'/dist/stylesheet/main.css',
-				'rel' => 'stylesheet',
-				'media' => 'screen'
-			]);
+			$js = 'main.js';
+			$css = 'main.css';
 		}
+		array_push($data['scripts'],'catalog/view/theme/'.$this->config->get('theme_default_directory').'/dist/scripts/'.$js);
+		array_push($data['styles'], [
+			'href' => 'catalog/view/theme/'.$this->config->get('theme_default_directory').'/dist/stylesheet/'.$css,
+			'rel' => 'stylesheet',
+			'media' => 'screen'
+		]);
 		// /assets.json
 		return $this->load->view('common/header', $data);
 	}

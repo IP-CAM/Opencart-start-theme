@@ -64,7 +64,9 @@ const settings = {
             ]
         },
         fonts: function () {
-
+            return [
+                settings.path.lib() + 'font-awesome/fonts/fontawesome-webfont.*'
+            ]
         }
     },
     output: {
@@ -154,7 +156,7 @@ gulp.task('styles', ['wiredep'], function () {
 // `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
 // structure. See: https://github.com/armed/gulp-flatten
 gulp.task('fonts', function () {
-    gulp.src(settings.path.lib()+'font-awesome/fonts/fontawesome-webfont.*')
+    gulp.src(settings.input.fonts())
         .pipe(flatten())
         .pipe(gulp.dest(settings.output.fonts()))
         .pipe(browserSync.stream());
@@ -177,7 +179,7 @@ gulp.task('watch', ['default'], function () {
 
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
-gulp.task('default', ['clean'],function() {
+gulp.task('default', ['clean'], function () {
     gulp.start('scripts');
     gulp.start('styles');
     gulp.start('fonts');
