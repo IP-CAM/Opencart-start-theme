@@ -11,7 +11,7 @@ RC-oc стартовая тема для opencart
 | gulp >= 3.8.10  | `gulp -v`    | `npm install -g gulp` |
 | Bower >= 1.3.12 | `bower -v`   | `npm install -g bower` |
 
-Для получения большего количества информации об установке перейдите к секции [Установка gulp и bower](#install-gulp-and-bower)
+Для получения большего количества информации об установке перейдите к секции [Установка gulp и bower](#Установка-gulp-и-bower)
 
 ## Дополнительные технологии
 
@@ -20,18 +20,18 @@ RC-oc стартовая тема для opencart
 * [Bower](http://bower.io/) для управления front-end зависимостями 
 * [asset-builder](https://github.com/austinpray/asset-builder) для настройки проекта через manifest.json
 * [Bootstrap](http://getbootstrap.com/)
-* [fontawesome](https://fontawesome.com/v4.7.0/icons/)
+
 ## Установка темы
 
 Скропируйте RC-oc в корень сайта с заменой файлов
 
 ## Настройка темы
 
-Устанавливайте нужные bower компоненты, scss и js подключатся автоматически во время сборки файлом. Для переноса шрифтов в папку `dist`, добавьте путь к шрифтам в массив `settings.input.fonts` 
+Редактируйте `lib/setup.php` для включения/выключения функциональности сайта, настраивайте меню, миниатюры постов и страниц, форматы постов, и сайдбары.
 
 ## Разработка темы
 
-RC-oc использует [gulp](http://gulpjs.com/) для управления сборкой проекта и [Bower](http://bower.io/) для управления front-end зависимостями 
+RC-oc использует [gulp](http://gulpjs.com/) для управления сборкой проекта и [Bower](http://bower.io/) для управления front-end зависимостями
 
 ### Установка gulp и bower
 
