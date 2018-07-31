@@ -182,9 +182,3 @@ gulp.task('default', ['clean'],function() {
     gulp.start('styles');
     gulp.start('fonts');
 });
-
-gulp.task('test', function () {
-    console.log('-Start-');
-    console.log();
-    console.log('--End--');
-});
