@@ -28,7 +28,7 @@ const enabled = {
 
 const settings = {
     theme_name: 'rc-opencart',
-    local_url: 'http://opencart.me',
+    local_url: 'http://opencart.dev',
     path: {
         source: function () {
             return 'catalog/view/theme/' + settings.theme_name + '/dev/';
