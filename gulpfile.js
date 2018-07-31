@@ -11,7 +11,7 @@ const gulp = require('gulp'),
     minify = require('gulp-minify'),
     concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps'),
-    // changed = require('gulp-changed'),
+//    changed = require('gulp-changed'),
     lazypipe = require('lazypipe'),
     rev = require('gulp-rev'),
     wiredep = require('wiredep').stream,
@@ -30,14 +30,17 @@ const settings = {
     theme_name: 'rc-opencart',
     local_url: 'http://opencart.dev',
     path: {
+        theme: function () {
+            return 'catalog/view/theme/' + settings.theme_name + '/';
+        },
         source: function () {
-            return 'catalog/view/theme/' + settings.theme_name + '/dev/';
+            return settings.path.theme() + '/dev/';
         },
         dist: function () {
-            return 'catalog/view/theme/' + settings.theme_name + '/dist/';
+            return settings.path.theme() + '/dist/';
         },
         lib: function () {
-            return 'catalog/view/theme/' + settings.theme_name + '/libs/';
+            return settings.path.theme() + '/libs/';
         }
     },
     input: {
@@ -60,7 +63,7 @@ const settings = {
         },
         reload: function () {
             return [
-                settings.path.source() + 'template/**/*.tpl',
+                settings.path.theme() + 'template/**/*.tpl',
             ]
         },
         fonts: function () {
@@ -128,9 +131,9 @@ gulp.task('wiredep', function () {
     return gulp.src(settings.input.styles(true))
         .pipe(wiredep())
         //Todo
-        // .pipe(changed(settings.path.source() + 'styles', {
-        //     hasChanged: changed.compareSha1Digest
-        // }))
+        //.pipe(changed(settings.path.source() + 'styles', {
+        //    hasChanged: changed.compareSha1Digest
+        //}))
         .pipe(gulp.dest(settings.path.source() + 'styles'));
 });
 
