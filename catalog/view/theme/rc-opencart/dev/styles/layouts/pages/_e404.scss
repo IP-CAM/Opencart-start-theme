@@ -1,0 +1,11 @@
+.e404 {
+    .page-header {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &-text {
+        text-align: center;
+        font-size: 20px;
+    }
+}

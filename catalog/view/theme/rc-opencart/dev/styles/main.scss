@@ -1,10 +1,11 @@
-
+@import "common/variables";
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../libs/bootstrap/scss/bootstrap.scss";
 @import "../../libs/font-awesome/scss/font-awesome.scss";
 // endbower
 
-body {
-    background-color: inherit;
-}
+//@import "components/";
+@import "layouts/header";
+@import "layouts/pages";
+@import "layouts/footer";
