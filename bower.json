@@ -7,15 +7,14 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.1.0"
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.1.0",
+    "font-awesome": "Font-Awesome#v4.7.0"
   },
-    "overrides": {
+  "overrides": {
     "bootstrap": {
       "main": [
-        "./scss/bootstrap-grid.scss",
-        "./scss/bootstrap-reboot.scss",
-        "./scss/_carousel.scss",
-        "./scss/_modal.scss",
+        "./scss/bootstrap.scss",
         "./dist/js/bootstrap.bundle.js"
       ]
     }

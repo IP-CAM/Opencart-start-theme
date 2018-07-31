@@ -31,26 +31,22 @@
         <meta property="og:image" content="<?php echo $logo; ?>"/>
     <?php } ?>
     <meta property="og:site_name" content="<?php echo $name; ?>"/>
-    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-    <script src="catalog/view/theme/rc-opencart/scripts/main.js" type="text/javascript"></script>
-    <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css"/>
     <link href="catalog/view/theme/rc-opencart/stylesheet/main.css" rel="stylesheet">
     <?php foreach ($styles as $style) { ?>
         <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>"/>
     <?php } ?>
-    <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
     <?php foreach ($links as $link) { ?>
         <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>"/>
     <?php } ?>
     <?php foreach ($scripts as $script) { ?>
-        <script src="<?php echo $script; ?>" type="text/javascript"></script>
+        <script src="<?php echo $script; ?>" type="text/javascript" defer></script>
     <?php } ?>
     <?php foreach ($analytics as $analytic) { ?>
         <?php echo $analytic; ?>
     <?php } ?>
+<!--    <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>-->
+<!--    <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
 </head>
 <body class="<?php echo $class; ?>">
 <nav id="top">

@@ -152,16 +152,16 @@ var cart = {
 			success: function(json) {
 				$('.alert, .text-danger').remove();
 
-				if (json['redirect']) {
-					location = json['redirect'];
+				if (json.redirect) {
+					location = json.redirect;
 				}
 
-				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				if (json.success) {
+					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json.success + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json.total + '</span>');
 					}, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -189,7 +189,7 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json.total + '</span>');
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -218,7 +218,7 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json.total + '</span>');
 				}, 100);
 
 				var now_location = String(document.location.pathname);
@@ -234,7 +234,7 @@ var cart = {
 			}
 		});
 	}
-}
+};
 
 var voucher = {
 	'add': function() {
@@ -255,7 +255,7 @@ var voucher = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json.total + '</span>');
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -269,7 +269,7 @@ var voucher = {
 			}
 		});
 	}
-}
+};
 
 var wishlist = {
 	'add': function(product_id) {
@@ -281,16 +281,16 @@ var wishlist = {
 			success: function(json) {
 				$('.alert').remove();
 
-				if (json['redirect']) {
-					location = json['redirect'];
+				if (json.redirect) {
+					location = json.redirect;
 				}
 
-				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				if (json.success) {
+					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json.success + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 				}
 
-				$('#wishlist-total span').html(json['total']);
-				$('#wishlist-total').attr('title', json['total']);
+				$('#wishlist-total span').html(json.total);
+				$('#wishlist-total').attr('title', json.total);
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 			},
@@ -302,7 +302,7 @@ var wishlist = {
 	'remove': function() {
 
 	}
-}
+};
 
 var compare = {
 	'add': function(product_id) {
@@ -314,10 +314,10 @@ var compare = {
 			success: function(json) {
 				$('.alert').remove();
 
-				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				if (json.success) {
+					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json.success + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-					$('#compare-total').html(json['total']);
+					$('#compare-total').html(json.total);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
 				}
@@ -330,7 +330,7 @@ var compare = {
 	'remove': function() {
 
 	}
-}
+};
 
 /* Agree to Terms */
 $(document).delegate('.agree', 'click', function(e) {
@@ -369,7 +369,7 @@ $(document).delegate('.agree', 'click', function(e) {
 	$.fn.autocomplete = function(option) {
 		return this.each(function() {
 			this.timer = null;
-			this.items = new Array();
+			this.items = [];
 
 			$.extend(this, option);
 
@@ -408,7 +408,7 @@ $(document).delegate('.agree', 'click', function(e) {
 				if (value && this.items[value]) {
 					this.select(this.items[value]);
 				}
-			}
+			};
 
 			// Show
 			this.show = function() {
@@ -420,12 +420,12 @@ $(document).delegate('.agree', 'click', function(e) {
 				});
 
 				$(this).siblings('ul.dropdown-menu').show();
-			}
+			};
 
 			// Hide
 			this.hide = function() {
 				$(this).siblings('ul.dropdown-menu').hide();
-			}
+			};
 
 			// Request
 			this.request = function() {
@@ -434,7 +434,7 @@ $(document).delegate('.agree', 'click', function(e) {
 				this.timer = setTimeout(function(object) {
 					object.source($(object).val(), $.proxy(object.response, object));
 				}, 200, this);
-			}
+			};
 
 			// Response
 			this.response = function(json) {
@@ -442,35 +442,35 @@ $(document).delegate('.agree', 'click', function(e) {
 
 				if (json.length) {
 					for (i = 0; i < json.length; i++) {
-						this.items[json[i]['value']] = json[i];
+						this.items[json[i].value] = json[i];
 					}
 
 					for (i = 0; i < json.length; i++) {
-						if (!json[i]['category']) {
-							html += '<li data-value="' + json[i]['value'] + '"><a href="#">' + json[i]['label'] + '</a></li>';
+						if (!json[i].category) {
+							html += '<li data-value="' + json[i].value + '"><a href="#">' + json[i].label + '</a></li>';
 						}
 					}
 
 					// Get all the ones with a categories
-					var category = new Array();
+					var category = [];
 
 					for (i = 0; i < json.length; i++) {
-						if (json[i]['category']) {
-							if (!category[json[i]['category']]) {
-								category[json[i]['category']] = new Array();
-								category[json[i]['category']]['name'] = json[i]['category'];
-								category[json[i]['category']]['item'] = new Array();
+						if (json[i].category) {
+							if (!category[json[i].category]) {
+								category[json[i].category] = [];
+								category[json[i].category].name = json[i].category;
+								category[json[i].category].item = [];
 							}
 
-							category[json[i]['category']]['item'].push(json[i]);
+							category[json[i].category].item.push(json[i]);
 						}
 					}
 
-					for (i in category) {
-						html += '<li class="dropdown-header">' + category[i]['name'] + '</li>';
+					for (var i in category) {
+						html += '<li class="dropdown-header">' + category[i].name + '</li>';
 
-						for (j = 0; j < category[i]['item'].length; j++) {
-							html += '<li data-value="' + category[i]['item'][j]['value'] + '"><a href="#">&nbsp;&nbsp;&nbsp;' + category[i]['item'][j]['label'] + '</a></li>';
+						for (j = 0; j < category[i].item.length; j++) {
+							html += '<li data-value="' + category[i].item[j].value + '"><a href="#">&nbsp;&nbsp;&nbsp;' + category[i].item[j].label + '</a></li>';
 						}
 					}
 				}
@@ -482,11 +482,11 @@ $(document).delegate('.agree', 'click', function(e) {
 				}
 
 				$(this).siblings('ul.dropdown-menu').html(html);
-			}
+			};
 
 			$(this).after('<ul class="dropdown-menu"></ul>');
 			$(this).siblings('ul.dropdown-menu').delegate('a', 'click', $.proxy(this.click, this));
 
 		});
-	}
+	};
 })(window.jQuery);
