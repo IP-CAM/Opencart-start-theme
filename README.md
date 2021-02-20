@@ -1,70 +1,70 @@
-# [RC-oc](https://github.com/redclick-eu/Opencart-start-theme)
+# [RC-oc] (https://github.com/redclick-eu/Opencart-start-theme)
 
-RC-oc стартовая тема для opencart
+RC-oc starter theme for opencart
 
-## Основные технологии
+## Core technologies
 
-| Технологии    | Проверка | Установка
+| Technologies | Checking | Installation
 | --------------- | ------------ | ------------- |
-| PHP >= 5.4.x    | `php -v`     | [php.net](http://php.net/manual/en/install.php) |
-| Node.js >= 4.5  | `node -v`    | [nodejs.org](http://nodejs.org/) |
-| gulp >= 3.8.10  | `gulp -v`    | `npm install -g gulp` |
-| Bower >= 1.3.12 | `bower -v`   | `npm install -g bower` |
+| PHP> = 5.4.x | `php -v` | [php.net] (http://php.net/manual/en/install.php) |
+| Node.js> = 4.5 | `node -v` | [nodejs.org] (http://nodejs.org/) |
+| gulp> = 3.8.10 | `gulp -v` | `npm install -g gulp` |
+| Bower> = 1.3.12 | `bower -v` | `npm install -g bower` |
 
-Для получения большего количества информации об установке перейдите к секции [Установка gulp и bower](#Установка-gulp-и-bower)
+For more information on installation, go to the [Installing gulp and bower] section (# Installing gulp and bower)
 
-## Дополнительные технологии
+## Additional technologies
 
-* [gulp](http://gulpjs.com/) скрипт сборки, который компилирует как Sass, так и Less, проверяет ошибки JavaScript, оптимизирует изображения и объединяет и минимизирует файлы
-* [BrowserSync](http://www.browsersync.io/) для обеспечения синхронизации нескольких браузеров и устройств во время тестирования, а также подключения обновленных CSS и JS в ваш браузер, во время разработки
-* [Bower](http://bower.io/) для управления front-end зависимостями 
-* [asset-builder](https://github.com/austinpray/asset-builder) для настройки проекта через manifest.json
-* [Bootstrap](http://getbootstrap.com/)
+* [gulp] (http://gulpjs.com/) build script that compiles both Sass and Less, checks for JavaScript errors, optimizes images, and merges and minifies files
+* [BrowserSync] (http://www.browsersync.io/) to ensure synchronization of multiple browsers and devices during testing, as well as connecting updated CSS and JS to your browser during development
+* [Bower] (http://bower.io/) to manage front-end dependencies
+* [asset-builder] (https://github.com/austinpray/asset-builder) to set up the project via manifest.json
+* [Bootstrap] (http://getbootstrap.com/)
 
-## Установка темы
+## Installing the theme
 
-Скропируйте RC-oc в корень сайта с заменой файлов
+Copy RC-oc to the site root with file replacement
 
-## Настройка темы
+## Theme customization
 
-Редактируйте `lib/setup.php` для включения/выключения функциональности сайта, настраивайте меню, миниатюры постов и страниц, форматы постов, и сайдбары.
+Edit `lib / setup.php` to enable / disable site functionality, customize menus, post and page thumbnails, post formats, and sidebars.
 
-## Разработка темы
+## Theme development
 
-RC-oc использует [gulp](http://gulpjs.com/) для управления сборкой проекта и [Bower](http://bower.io/) для управления front-end зависимостями
+RC-oc uses [gulp] (http://gulpjs.com/) to manage project build and [Bower] (http://bower.io/) to manage front-end dependencies
 
-### Установка gulp и bower
+### Installing gulp and bower
 
-Работа через командную строку:
+Working through the command line:
 
-1. Установите [gulp](http://gulpjs.com) и [Bower](http://bower.io/) глобально командой `npm install -g gulp bower`
-2. В директории темы, запустите `npm install`
-3. Затем запустите `bower install`
-4. PROFIT!!!
+1. Install [gulp] (http://gulpjs.com) and [Bower] (http://bower.io/) globally using `npm install -g gulp bower`
+2. In the theme directory, run `npm install`
+3. Then run `bower install`
+4. PROFIT !!!
 
-### Используемые gulp команды
+### Used gulp commands
 
-* `gulp` — Компилирует и оптимизирует файлы в директорию 'assets'
-* `gulp watch` — Компилирует файл в директорию 'assets' после изменения
-* `gulp --production` — Компилирет исходники для продакшена (отключение карт исходников)
+* `gulp` - Compiles and optimizes files in the 'assets' directory
+* `gulp watch` - Compiles the file to the 'assets' directory after change
+* `gulp --production` - Compile source for production (disable source maps)
 
-### Использование BrowserSync
+### Using BrowserSync
 
-Для использования BrowserSync после запуска `gulp watch` требуется обновить ` settings.local_url` в файле `gulpfile.js` для использования локального url
+To use BrowserSync, after running `gulp watch`, you need to update` settings.local_url` in `gulpfile.js` file to use local url
 
-Для примера, если ваше локальный url разработки `http://project-name.dev` требуется обновить файл:
-```json
+For example, if your local development url is `http: // project-name.dev` you need to update the file:
+`` 'json
 ...
   "config": {
     "devUrl": "http://project-name.dev"
   }
 ...
-```
-Если url `http://localhost:8888/project-name/` требуется обновить файл:
-```json
+``,
+If url is `http: // localhost: 8888 / project-name /` you need to update the file:
+`` 'json
 ...
   "config": {
-    "devUrl": "http://localhost:8888/project-name/"
+    "devUrl": "http: // localhost: 8888 / project-name /"
   }
 ...
-```
+``, 
